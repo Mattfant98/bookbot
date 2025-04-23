@@ -1,6 +1,7 @@
 from stats import get_word_count
 from stats import get_char_count
 from stats import sort_dict
+from stats import common_words
 import sys
 
 if len(sys.argv) != 2:
@@ -19,6 +20,7 @@ def main(filepath):
     word_count = get_word_count(book)
     char_count = get_char_count(book)
     sorted_dict = sort_dict(char_count)
+    common_word_list = common_words(book)
     print(f"============ BOOKBOT ============\nAnalyzing book found at {filepath}...")
     print("----------- Word Count ----------")
     print(f"Found {word_count} total words")
@@ -28,6 +30,16 @@ def main(filepath):
             print(f"{item[0]}: {item[1]}")
         else:
             continue
+    
+    print("------- Most Common Words -------")
+
+    for word in common_word_list:
+        print(f"{word[0]}: {word[1]}")
+     
+    
     print("============= END ===============")
+
+    if filepath == "books/beemovie.txt":
+        print("you like jazz?")
     
 main(sys.argv[1])
