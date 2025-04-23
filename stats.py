@@ -25,11 +25,13 @@ def common_words(book):
     word_dict = {}
     words = book.lower().split()
     for word in words:
-        word = word.strip('.,!?";:(){}[]')
-        if word in word_dict:
-            word_dict[word] += 1
-        else:
-            word_dict[word] = 1
+        word = word.strip('.,!?";:(){}[]-')
+        if word:
+
+            if word in word_dict:
+                word_dict[word] += 1
+            else:
+                word_dict[word] = 1
     word_list = list(word_dict.items())
     word_list.sort(key=lambda item: item[1], reverse=True)
     return word_list[:50]
