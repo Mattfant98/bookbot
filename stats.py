@@ -27,7 +27,6 @@ def common_words(book):
     for word in words:
         word = word.strip('.,!?";:(){}[]-')
         if word:
-
             if word in word_dict:
                 word_dict[word] += 1
             else:
