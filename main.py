@@ -31,14 +31,11 @@ def main(filepath):
         else:
             continue
     
-    print("------- Most Common Words -------")
+    print("----- 50 Most Common Words ------")
 
     for word in common_word_list:
         print(f"{word[0]}: {word[1]}")
         
-            
-     
-    
     print("============= END ===============")
 
     if filepath == "books/beemovie.txt":
