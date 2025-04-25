@@ -30,6 +30,7 @@ def main(filepath):
             print(f"{item[0]}: {item[1]}")
         else:
             continue
+       
     
     print("----- 50 Most Common Words ------")
 
